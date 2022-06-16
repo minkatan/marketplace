@@ -17,7 +17,7 @@ const ListingItems = ({listing, id, onEdit, onDelete}) => {
                 <div className="flex md:flex-row flex-col text-center">
                     <span className="text-red-700 font-semibold text-sm md:text-base px-2 py-1 rounded-full line-through">
                             {listing.offer ? '$' : ''}{listing.offer && decimalNumber(listing.regularPrice)} 
-                            {listing.type === 'rent' && ' / month'}
+                            {listing.type === 'rent' && listing.offer && ' / month'}
                     </span>
                     <span className="text-green-700 font-semibold text-sm md:text-base px-2 py-1 rounded-full">
                             ${listing.offer ? decimalNumber(listing.discountedPrice) : decimalNumber(listing.regularPrice)} 

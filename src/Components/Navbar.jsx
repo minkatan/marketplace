@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
-import { getAuth } from 'firebase/auth'
+import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom'
+import {toast} from 'react-toastify'
 
 const Navbar = () => {
     let locate = useLocation().pathname
@@ -26,8 +27,11 @@ const Navbar = () => {
     const user = auth.currentUser;
 
     const onLogout = () => {
-        auth.signOut()
-        navigate('/sign-in')
+        signOut(auth).then(() => {
+            navigate('/sign-in')
+          }).catch((error) => {
+            toast.error(error)
+          });
       }
     
       if(!user) {
