@@ -18,10 +18,6 @@ import Navbar from './Components/Navbar'
 
 import PrivateRoute from './Components/PrivateRoute'
 
-
-
-
-
 export default function App() {
   return (
     <>

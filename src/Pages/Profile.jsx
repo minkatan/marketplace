@@ -93,7 +93,7 @@ const Profile = () => {
 
   return (
     <>
-    <main className='mx-auto container mt-8 p-4'>
+    <main className='mx-auto container mt-8 p-4 h-screen'>
       <div className='flex flex-col gap-y-2 md:text-xl text-emerald-900 bg-green-50 px-2'>
         <div className='flex flex-row justify-between'>
           <form className='w-full py-4 rounded px-2'>

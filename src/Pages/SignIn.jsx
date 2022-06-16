@@ -50,7 +50,7 @@ const SignIn = () => {
           <p className='text-4xl md:text-6xl'>Please Sign In</p>
         </header>
 
-        <main className='px-4 mt-8 w-full'>
+        <main className='px-4 mt-8 w-full '>
           <form onSubmit={onSubmit} className='text-emerald-900 flex flex-col justify-center items-center text-xl w-full'>
             <input 
               type="email" 

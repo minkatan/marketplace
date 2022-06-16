@@ -23,26 +23,32 @@ const Navbar = () => {
 
     const auth = getAuth()
     const navigate = useNavigate()
+    const user = auth.currentUser;
 
     const onLogout = () => {
         auth.signOut()
         navigate('/sign-in')
       }
+    
+      if(!user) {
+        return <></>
+    } else {
 
-    return (
-        <header className='flex flex-row flex-wrap justify-between p-4 bg-emerald-100'>
-            <h1 className='text-emerald-900 text-4xl font-bold capitalize'>
-                {locate}
-            </h1>
-            {locate === 'Sign-in' || locate === 'Sign-up' ? '' :
-            <button 
-                type='button' 
-                onClick={onLogout} 
-                className='bg-emerald-200 p-2 rounded-xl shadow-xl'>Logout
-            </button>
-            } 
-        </header>
-    )
+        return (
+            <header className='flex flex-row flex-wrap justify-between p-4 bg-emerald-100'>
+                <h1 className='text-emerald-900 text-4xl font-bold capitalize'>
+                    {locate}
+                </h1>
+                {locate === 'Sign-in' || locate === 'Sign-up' ? '' :
+                <button 
+                    type='button' 
+                    onClick={onLogout} 
+                    className='bg-emerald-200 p-2 rounded-xl shadow-xl'>Logout
+                </button>
+                } 
+            </header>
+        )
+    }
 }
 
 export default Navbar
